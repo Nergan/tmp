@@ -1,5 +1,4 @@
 from sys import argv
-
 from asyncio import sleep
 
 from pywebio import start_server
@@ -54,7 +53,7 @@ async def refresh_msg(nickname, msg_box):
         await sleep(1)
         
         for m in chat_msgs[last_idx:]:
-            if m[0] != nickname: # if not a message from current user
+            if m[0] != nickname:
                 msg_box.append(put_markdown(f"`{m[0]}`: {m[1]}"))
         
         # remove expired
