@@ -20,5 +20,5 @@ jobs:
     - run: pyinstaller msg.py ${{ matrix.onefile }}
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ matrix.os }}${{ matrix.onefile }}
+        name: ${{ matrix.os }}${{ matrix.onefile }}-${{ github.head_ref }}
         path: dist/*
