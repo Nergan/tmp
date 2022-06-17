@@ -18,7 +18,7 @@ jobs:
 
     - run: pip install -r requirements.txt pyinstaller
     - run: pyinstaller msg.py ${{ matrix.onefile }}
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
-        name: ${{ matrix.os }}${{ matrix.onefile }}-${{ github.head_ref }}
+        name: ${{ matrix.os }}${{ matrix.onefile }}
         path: dist/*
