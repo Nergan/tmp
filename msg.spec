@@ -1,5 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
-from pywebio.util import pyinstaller_datas
+from pywebio.utils import pyinstaller_datas
 
 
 block_cipher = None
