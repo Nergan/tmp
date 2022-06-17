@@ -19,4 +19,5 @@ jobs:
     - run: pyinstaller msg.py
     - uses: actions/upload-artifact@v2
       with:
+        name: ${{ matrix.os }}
         path: dist/*
