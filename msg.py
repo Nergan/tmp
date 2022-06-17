@@ -64,8 +64,7 @@ async def refresh_msg(nickname, msg_box):
         last_idx = len(chat_msgs)
 
 if __name__ == "__main__":   
-    print('Hello World')
-     
+   
     global PORT, MAX_MESSAGES_COUNT
     PORT, MAX_MESSAGES_COUNT = 8080, 100
     
