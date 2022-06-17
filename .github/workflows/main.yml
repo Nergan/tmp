@@ -8,6 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ['windows-latest', 'ubuntu-latest', 'macos-latest']
+        onefile: ['', '--onefile']
 
     steps:
     - uses: actions/checkout@v2
@@ -16,8 +17,8 @@ jobs:
         python-version: 3.7
 
     - run: pip install -r requirements.txt pyinstaller
-    - run: pyinstaller msg.py
+    - run: pyinstaller msg.py ${{ matrix.onefile }}
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ matrix.os }}
+        name: ${{ matrix.os }}${{ matrix.onefile }}
         path: dist/*
