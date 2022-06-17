@@ -18,7 +18,11 @@ jobs:
 
     - run: pip install -r requirements.txt pyinstaller
     - run: pyinstaller msg.py ${{ matrix.onefile }}
+    
+    - id: commit
+      uses: pr-mpt/actions-commit-hash@v1
+    
     - uses: actions/upload-artifact@v3
       with:
-        name: ${{ matrix.os }}${{ matrix.onefile }}
+        name: ${{ matrix.os }}${{ matrix.onefile }}-${{ steps.commit.outputs.short }}
         path: dist/*
